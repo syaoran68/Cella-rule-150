@@ -34,3 +34,48 @@ function draw_grid( rctx, rminor, rmajor, rstroke, rfill  )
     }
     rctx.restore( );
 }
+//rules setup for the cella-150 
+// 0 black / 1 white
+function rules(left, center, right)
+{
+        //rule 1
+        if(left == 0 && center == 0 && right == 0)
+        {
+            return 0;
+        }
+        //rule 2
+        if(left == 0 && center == 0 && right == 1)
+        {
+            return 1;
+        }
+        //rule 3
+        if(left == 0 && center == 1 && right == 0)
+        {
+            return 1;
+        }
+        //rule 4     
+        if(left == 0 && center == 1 && right == 1)
+        {
+            return 0;
+        }
+        //rule 5 
+        if(left == 1 && center == 0 && right == 0)
+        {
+            return 1;
+        }
+        //rule 6 
+        if(left == 1 && center == 0 && right == 1)
+        {
+            return 0;
+        }
+        //rule 7 
+        if(left == 1 && center == 1 && right == 0)
+        {
+            return 0;
+        }
+        //rule 8 
+        if(left == 1 && center == 1 && right == 1)
+        {
+            return 1;
+        }
+}
