@@ -13,9 +13,5 @@ function setup() // P5 Setup Fcn
     let width = sz * g_canvas.wid;  // Our 'canvas' uses cells of given size, not 1x1 pixels.
     let height = sz * g_canvas.hgt;
     createCanvas( width, height );  // Make a P5 canvas.
-    draw_grid( 22, 400, 'white', 'yellow' );
+    draw_grid(context, 22, 400, 'white', 'yellow' );
 }
-
-var g_bot = { dir:3, x:20, y:20, color:100 }; // Dir is 0..7 clock, w 0 up.
-var g_box = { t:1, hgt:47, l:1, wid:63 }; // Box in which bot can move.
-

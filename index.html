@@ -9,11 +9,18 @@
         <style>body {padding: 0; margin: 0} </style>
         <script src="p5.js"></script>
         <!-- loading of the action javascripting can go here-->
-        <script src="cs-sketch.js"></script>
+        
     </head>
     <body>
         <h1>Testing HTML canvas with P5</h1>
+        <canvas id="grid" width="400" height="400"></canvas>
         <p>
     </body>
-        <script src="assets/draw-stuff.js"></script>
+        <script src="assets/setup-functions.js"></script>
+        <script>
+            var canvas = document.getElementById( "grid" );
+            var context = canvas.getContext( "2d" );
+            draw_grid( context, 10, 50, 'white', 'yellow' );
+
+        </script>
 </html>
