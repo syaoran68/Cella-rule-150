@@ -78,4 +78,6 @@ function rules(left, center, right)
         {
             return 1;
         }
+
+        return 0;
 }

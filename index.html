@@ -22,6 +22,38 @@
             var context = canvas.getContext( "2d" );
             draw_grid( context, 10, 50, 'white', 'yellow' );
 
+            var cells = [];
+            for (var rows = 0; rows < canvas.width / 10; rows++)
+            {
+                cells[rows] = [];
+                for(var columns = 0; columns < canvas.height / 10; columns++)
+                {
+                    cells[rows][columns] = 0;
+                }
+            }
+            //setting the middle of the first row to the correct color
+            cells[20][0] = 1;
             
+            //setting up the row traversal (starts with 1)
+            var row_counting = 1;
+            
+            while (row_counting < cells.length)
+            {
+                for (var generation_itt = 1; generation_itt < cells.length - 1; generation_itt++)
+                {
+                    var left = cells[generation_itt - 1][row_counting - 1];
+                    var center = cells[generation_itt][row_counting - 1];
+                    var right = cells[generation_itt + 1][row_counting - 1];
+
+                    cells[generation_itt][row_counting] = rules(left, center, right)
+
+                }
+
+                generation_itt++;
+                
+            }
+            
+
+
         </script>
 </html>
