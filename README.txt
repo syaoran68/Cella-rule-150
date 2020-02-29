@@ -1,4 +1,4 @@
-CPSC 335 Project
+CPSC 335-03 Project
 Cella Rule 150
 Group Members:
 Eddie Huang
