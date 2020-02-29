@@ -1,3 +1,8 @@
+<!--Project Cella 150
+Eddie Huang
+edhuang04@csu.fullerton.edu
+-->
+
 <!DOCTYPE html>
 <html lang="">
     <head>
@@ -7,21 +12,28 @@
         <title>Cella-Rule-150</title>
         <link rel="stylesheet" href="assets/styles.css">
         <style>body {padding: 0; margin: 0} </style>
+        <!--Loading in of the p5 language-->
         <script src="p5.js"></script>
-        <!-- loading of the action javascripting can go here-->
         
     </head>
     <body>
-        <h1>Testing HTML canvas with P5</h1>
+        <h1>Cella-Rule-150 Cell generation.</h1>
+        <h3>Group: Baymax</h3>
+        <h4>Members: Eddie Huang</h4>
+        <!--generating the canvas-->
         <canvas id="grid" width="400" height="400"></canvas>
         <p>
     </body>
+        <!--loading in the setup JS functions-->
         <script src="assets/setup-functions.js"></script>
         <script>
+            //grabbing the html generated canvas so we can manipulate it
             var canvas = document.getElementById( "grid" );
             var context = canvas.getContext( "2d" );
+            //draw grid inside the canvas for the cells
             draw_grid( context, 10, 50, 'white', 'yellow' );
 
+            //generating the holding array to tell whether the cell should be black or white
             var cells = [];
             for (var rows = 0; rows < canvas.width / 10; rows++)
             {
@@ -37,6 +49,7 @@
             //setting up the row traversal (starts with 1)
             var counting = 1;
             
+            //traversing the each row dependant on the length
             while (counting < cells.length)
             {
                 for (var column_traversal = 1; column_traversal < cells.length - 1; column_traversal++)
@@ -46,7 +59,8 @@
                     var right = cells[counting - 1][column_traversal + 1];
 
                     cells[counting][column_traversal] = rules(left, center, right)
-
+                    
+                    //changing the color of the cell after we've checked the preview above row's 3 cells
                     if(cells[counting][column_traversal] == 1)
                     {
                         fill_square(context, column_traversal, counting)
@@ -56,7 +70,7 @@
                 counting++;
                 
             }
-            //this is for testing
+            
             
 
         </script>

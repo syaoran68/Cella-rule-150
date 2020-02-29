@@ -1,10 +1,7 @@
-// Draw stuff, with P5  // CF p5js.org/reference
-// Time-stamp: <2020-02-02 14:46:00 Chuck Siska>
-// ------------------------------------------------------------
-
-// =====================================================  draw_grid ====
-// Draw a fancy grid with major & minor lines 
-// & major row/col numbers.
+//Cella-Rule-150
+//CPSC335
+//Eddie Huang
+//edhuang04@csu.fullerton.edu
 
 
 function draw_grid( rctx, rminor, rmajor, rstroke, rfill  ) 
